@@ -21,11 +21,10 @@ export class CategoryListComponent implements OnInit {
   }
 
   getCategories(): void {
-    this.service.getAll().subscribe(response => {
-      this.categories = response;
-    }, (error) => {
-      toastr.error("Erro ao listar categorias")
-    }); 
+    this.service.getAll().subscribe(
+      response => this.categories = response, 
+      (error) => toastr.error("Erro ao listar categorias")
+    ); 
   }
 
   deleteCategory(category) {

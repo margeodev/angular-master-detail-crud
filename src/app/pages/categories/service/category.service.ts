@@ -31,9 +31,5 @@ export class CategoryService {
   delete(id: number):Observable<Category> {
     return this.httpClient.delete<Category>(`${this.apiUrl}/${id}`);
   }
-
-  private handleError(error: any):Observable<any> {
-    console.log('ERRO NA REQUISIÇÂO: ', error);
-    return throwError(error);
-  }
+  
 }
